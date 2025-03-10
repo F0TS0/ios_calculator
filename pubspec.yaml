@@ -1,0 +1,17 @@
+name: ios_calculator
+description: A simple iOS-style calculator built with Flutter.
+publish_to: "none"
+
+environment:
+  sdk: ">=3.7.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.1
+  sqflite: ^2.3.2
+  path: ^1.8.3
+  intl: ^0.20.2
+
+flutter:
+  uses-material-design: true
