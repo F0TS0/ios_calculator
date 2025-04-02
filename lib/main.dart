@@ -1,25 +1,28 @@
+// main.dart
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
-import 'screens/calculator_screen.dart';
-import 'providers/calculator_provider.dart';
+import 'package:flutter/material.dart' show WidgetsFlutterBinding;
+import 'package:ios_calculator/pages/calculator_page.dart';
+import 'package:ios_calculator/pages/converter_page.dart';
+import 'package:ios_calculator/pages/history_page.dart';
 
 void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (_) => CalculatorProvider(),
-      child: const CalculatorApp(),
-    ),
-  );
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
 }
 
-class CalculatorApp extends StatelessWidget {
-  const CalculatorApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      debugShowCheckedModeBanner: false,
-      home: CalculatorScreen(),
+    return CupertinoApp(
+      title: 'iOS Calculator',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const CalculatorPage(),
+        '/converter': (context) => const ConverterPage(),
+        '/history': (context) => const HistoryPage(),
+      },
     );
   }
 }

@@ -1,6 +1,6 @@
 name: ios_calculator
-description: A simple iOS-style calculator built with Flutter.
-publish_to: "none"
+description: "A simple iOS-style calculator with history and unit conversion."
+version: 1.0.0+1
 
 environment:
   sdk: ">=3.7.0 <4.0.0"
@@ -8,10 +8,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.1.1
+  cupertino_icons: ^1.0.5
+  math_expressions: ^2.2.1
   sqflite: ^2.3.2
   path: ^1.8.3
-  intl: ^0.20.2
 
 flutter:
   uses-material-design: true
